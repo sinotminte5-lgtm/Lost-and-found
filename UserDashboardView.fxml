@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.paint.Color?>
+
+<StackPane alignment="CENTER" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #E6F0F8;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lostid.controllers.UserDashboardController">
+    <children>
+        <VBox alignment="TOP_CENTER" maxWidth="700.0" prefHeight="550.0" prefWidth="600.0" spacing="30.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 40;">
+            <effect>
+                <DropShadow blurType="GAUSSIAN" color="#00000033" height="30.0" radius="14.5" width="30.0" />
+            </effect>
+            <children>
+                <Label fx:id="welcomeLabel" alignment="CENTER" style="-fx-font-weight: bold; -fx-text-fill: #333;" text="Welcome, User">
+                    <font>
+                        <Font size="26.0" />
+                    </font>
+                </Label>
+
+                <Label alignment="CENTER" style="-fx-font-size: 16px; -fx-text-fill: #555;" text="Please select an option below:" />
+
+                <GridPane alignment="CENTER" hgap="25.0">
+
+                    <VBox fx:id="lostIdCard" alignment="TOP_CENTER" onMouseClicked="#handleLostIDForm" style="-fx-background-color: #FFF0F0; -fx-background-radius: 10; -fx-border-color: #FF5A5F; -fx-border-width: 2; -fx-border-radius: 10;" prefWidth="250.0" GridPane.columnIndex="0">
+                        <padding>
+                            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                        </padding>
+                        <effect>
+                            <DropShadow color="#0000001a" />
+                        </effect>
+                        <children>
+                            <Label text="&#x2716;" style="-fx-font-size: 40px; -fx-text-fill: #FF5A5F;" /> <Label style="-fx-font-weight: bold; -fx-font-size: 18px; -fx-text-fill: #333; -fx-padding: 10 0 5 0;" text="I Lost My ID" />
+                            <Label alignment="CENTER" wrapText="true" textAlignment="CENTER" text="Report a missing ID, providing details for matching." style="-fx-font-size: 13px; -fx-text-fill: #666;" />
+                        </children>
+                    </VBox>
+
+                    <VBox fx:id="foundIdCard" alignment="TOP_CENTER" onMouseClicked="#handleFoundIDForm" style="-fx-background-color: #F0F8FF; -fx-background-radius: 10; -fx-border-color: #4285F4; -fx-border-width: 2; -fx-border-radius: 10;" prefWidth="250.0" GridPane.columnIndex="1">
+                        <padding>
+                            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                        </padding>
+                        <effect>
+                            <DropShadow color="#0000001a" />
+                        </effect>
+                        <children>
+                            <Label text="+" style="-fx-font-size: 40px; -fx-text-fill: #4285F4;" /> <Label style="-fx-font-weight: bold; -fx-font-size: 18px; -fx-text-fill: #333; -fx-padding: 10 0 5 0;" text="I Found an ID" />
+                            <Label alignment="CENTER" wrapText="true" textAlignment="CENTER" text="Submit details of a found ID and optionally upload a photo." style="-fx-font-size: 13px; -fx-text-fill: #666;" />
+                        </children>
+                    </VBox>
+                </GridPane>
+
+                <Region VBox.vgrow="ALWAYS" /> <Button onAction="#handleBack" prefHeight="40.0" prefWidth="150.0"
+                                                       style="-fx-background-color: #9E9E9E; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" text="Logout" />
+            </children>
+        </VBox>
+    </children>
+</StackPane>
